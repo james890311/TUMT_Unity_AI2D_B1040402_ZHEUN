@@ -69,6 +69,11 @@ public class NewBehaviourScript : MonoBehaviour
             npc.score.countPlayer += 1;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        DisAq();
+    }
     #endregion
 
     #region 方法
@@ -110,4 +115,11 @@ public class NewBehaviourScript : MonoBehaviour
         if (hp <= 0) final.SetActive(true);
     }
     #endregion
+
+    public void DisAq()
+    {
+        final.SetActive(true);
+
+        Destroy(this);
+    }
 }
