@@ -8,7 +8,7 @@ public class gamemanager : MonoBehaviour {
     public void Replay()
     {
         //Application.LoadLevel("遊戲");     //舊版 API
-        SceneManager.LoadScene("遊戲");    //新版 API
+        SceneManager.LoadScene(0);    //新版 API
     }
 
     public void Quit()

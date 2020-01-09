@@ -66,13 +66,17 @@ public class NewBehaviourScript : MonoBehaviour
             Destroy(collision.gameObject);    //刪除
             onEat.Invoke();                   //呼叫事件
 
-            npc.score.countPlayer += 1;
+        //    npc.score.countPlayer += 1;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        DisAq();
+        if(other.gameObject.tag == "MOS")
+        {
+            DisAq();
+        }
+       
     }
     #endregion
 
@@ -120,6 +124,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
         final.SetActive(true);
 
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

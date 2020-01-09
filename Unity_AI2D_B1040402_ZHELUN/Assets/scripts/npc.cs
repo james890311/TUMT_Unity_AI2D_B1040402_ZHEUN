@@ -24,17 +24,18 @@ public class npc : MonoBehaviour
     public float speed = 1.5f;
     [Header("任務相關")]
     public bool complete;
-    public int countPlayer;
+    public int countPlayer=0;
     public int countFinish = 1;
     [Header("介面")]
     public GameObject objCanvas;
     public Text textSay;
+    public GameObject GG;
     #endregion
 
     public AudioClip soundSay;
 
     private AudioSource aud;
-
+    
     public static npc score;
 
     private void Start()
@@ -87,6 +88,7 @@ public class npc : MonoBehaviour
                 break;
             case state.complete:
                 StartCoroutine(ShowDialog(sayComplete));            //完成對話
+                GG.SetActive(true);
                 break;
         }
     }
